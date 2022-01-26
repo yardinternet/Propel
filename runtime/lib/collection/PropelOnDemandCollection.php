@@ -131,6 +131,7 @@ class PropelOnDemandCollection extends PropelCollection
      *
      * @return integer Number of results
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return $this->iterator->count();
@@ -138,6 +139,7 @@ class PropelOnDemandCollection extends PropelCollection
 
     // ArrayObject methods
 
+    #[\ReturnTypeWillChange]
     public function append($value)
     {
         throw new PropelException('The On Demand Collection is read only');
@@ -148,51 +150,61 @@ class PropelOnDemandCollection extends PropelCollection
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function asort()
     {
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function exchangeArray($input)
     {
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function getArrayCopy()
     {
         throw new PropelException('The On Demand Collection does not allow access by offset');
     }
 
+    #[\ReturnTypeWillChange]
     public function getFlags()
     {
         throw new PropelException('The On Demand Collection does not allow access by offset');
     }
 
+    #[\ReturnTypeWillChange]
     public function ksort()
     {
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function natcasesort()
     {
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function natsort()
     {
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function setFlags($flags)
     {
         throw new PropelException('The On Demand Collection does not allow acces by offset');
     }
 
+    #[\ReturnTypeWillChange]
     public function uasort($cmp_function)
     {
         throw new PropelException('The On Demand Collection is read only');
     }
 
+    #[\ReturnTypeWillChange]
     public function uksort($cmp_function)
     {
         throw new PropelException('The On Demand Collection is read only');
