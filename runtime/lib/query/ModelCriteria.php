@@ -21,13 +21,15 @@
  * @method     ModelCriteria rightJoin($relation) Adds a RIGHT JOIN clause to the query
  * @method     ModelCriteria innerJoin($relation) Adds a INNER JOIN clause to the query
  * @method     ModelCriteria getSelectQuery($alias) Get the Criteria for a specific subQuery
- * @method     ModelCriteria _or()
+ * @method     T _or()
  *
  * @property   ModelJoin[] $joins
  *
  * @author     François Zaninotto
  * @version    $Revision$
  * @package    propel.runtime.query
+ *
+ * @template T
  */
 class ModelCriteria extends Criteria
 {
@@ -974,7 +976,7 @@ class ModelCriteria extends Criteria
      *
      * @see       Criteria::mergeWith()
      *
-     * @return ModelCriteria The primary criteria object
+     * @return T
      */
     public function endUse()
     {

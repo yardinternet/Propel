@@ -844,7 +844,7 @@ class Criteria implements IteratorAggregate
      * @param string $operator   logical operator, either Criteria::LOGICAL_AND, or Criteria::LOGICAL_OR
      * @param string $name       optional name to combine the criterion later
      *
-     * @return Criteria
+     * @return T
      *
      * @throws PropelException
      */
@@ -1841,7 +1841,7 @@ class Criteria implements IteratorAggregate
     // Fluid operators
 
     /**
-     * @return Criteria
+     * @return T
      */
     public function _or()
     {

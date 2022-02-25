@@ -127,6 +127,8 @@ class QueryBuilder extends OMBuilder
  * @method $queryClass leftJoin" . $relationName . "(\$relationAlias = null) Adds a LEFT JOIN clause to the query using the " . $relationName . " relation
  * @method $queryClass rightJoin" . $relationName . "(\$relationAlias = null) Adds a RIGHT JOIN clause to the query using the " . $relationName . " relation
  * @method $queryClass innerJoin" . $relationName . "(\$relationAlias = null) Adds a INNER JOIN clause to the query using the " . $relationName . " relation
+ * @method $queryClass leftJoinWith{$relationName}(\$relationAlias = null)
+ * @method $queryClass joinWith{$relationName}(\$relationAlias = null)
  *";
         }
         foreach ($this->getTable()->getReferrers() as $refFK) {
@@ -1255,7 +1257,7 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . "
      *                                   to be used as main alias in the secondary query
      * @param     string \$joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return   $queryClass A secondary query class using the current class as primary query
+     * @return   {$queryClass}<T> A secondary query class using the current class as primary query
      */
     public function use" . $relationName . "Query(\$relationAlias = null, \$joinType = " . $joinType . ")
     {

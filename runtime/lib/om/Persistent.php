@@ -113,4 +113,6 @@ interface Persistent
      * @throws Exception
      */
     public function save(PropelPDO $con = null);
+
+    public function reload($deep = false, PropelPDO $con = null);
 }
