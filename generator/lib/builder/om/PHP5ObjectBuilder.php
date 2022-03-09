@@ -3497,9 +3497,9 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
     /**
      * Get the associated $className object
      *
-     * @param PropelPDO \$con Optional Connection object.
-     * @param \$doQuery Executes a query to get the object if required
-     * @return $className The associated $className object.
+     * @param ?PropelPDO \$con Optional Connection object.
+     * @param bool \$doQuery Executes a query to get the object if required
+     * @return ?{$className} The associated {$className} object.
      * @throws PropelException
      */
     public function get" . $this->getFKPhpNameAffix($fk, $plural = false) . "(PropelPDO \$con = null, \$doQuery = true)
