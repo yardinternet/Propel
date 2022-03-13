@@ -163,7 +163,7 @@ class ModelCriteria extends Criteria
      *
      * @param string|PropelFormatter $formatter a formatter class name, or a formatter instance
      *
-     * @return ModelCriteria The current object, for fluid interface
+     * @return T The current object, for fluid interface
      *
      * @throws PropelException
      */
