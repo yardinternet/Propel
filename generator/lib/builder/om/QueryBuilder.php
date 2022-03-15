@@ -161,7 +161,7 @@ class QueryBuilder extends OMBuilder
  *";
         foreach ($this->getTable()->getColumns() as $column) {
             $script .= "
- * @method array findBy" . $column->getPhpName() . "(" . $column->getPhpType() . " \$" . $column->getName() . ") Return $modelClass objects filtered by the " . $column->getName() . " column";
+ * @method array findBy" . $column->getPhpName() . "(" . $column->getPhpType() . "|array \$" . $column->getName() . ") Return $modelClass objects filtered by the " . $column->getName() . " column";
         }
 
         if ($this->getBuildProperty('addClassLevelComment')) {
