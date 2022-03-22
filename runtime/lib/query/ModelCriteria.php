@@ -212,7 +212,7 @@ class ModelCriteria extends Criteria
      * @param mixed  $value         A value for the condition
      * @param mixed  $bindingType   A value for the condition
      *
-     * @return ModelCriteria The current object, for fluid interface
+     * @return T The current object, for fluid interface
      */
     public function condition($conditionName, $clause, $value = null, $bindingType = null)
     {
@@ -824,7 +824,7 @@ class ModelCriteria extends Criteria
      * @param string $relation Relation to use for the join
      * @param string $joinType Accepted values are null, 'left join', 'right join', 'inner join'
      *
-     * @return ModelCriteria The current object, for fluid interface
+     * @return T The current object, for fluid interface
      */
     public function joinWith($relation, $joinType = Criteria::INNER_JOIN)
     {
