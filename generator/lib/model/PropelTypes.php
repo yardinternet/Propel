@@ -90,8 +90,8 @@ class PropelTypes
     const TIME_NATIVE_TYPE = "string";
     const TIMESTAMP_NATIVE_TYPE = "string";
     const BU_TIMESTAMP_NATIVE_TYPE = "string";
-    const BOOLEAN_NATIVE_TYPE = "boolean";
-    const BOOLEAN_EMU_NATIVE_TYPE = "boolean";
+    const BOOLEAN_NATIVE_TYPE = "bool";
+    const BOOLEAN_EMU_NATIVE_TYPE = "bool";
     const OBJECT_NATIVE_TYPE = "";
     const PHP_ARRAY_NATIVE_TYPE = "array";
     const ENUM_NATIVE_TYPE = "int";
@@ -358,7 +358,7 @@ class PropelTypes
      */
     public static function isPhpPrimitiveType($phpType)
     {
-        return in_array($phpType, array("boolean", "int", "double", "float", "string"));
+        return in_array($phpType, array("bool", "boolean", "int", "double", "float", "string"));
     }
 
     /**

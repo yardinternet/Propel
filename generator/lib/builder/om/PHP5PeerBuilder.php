@@ -1376,7 +1376,7 @@ abstract class " . $this->getClassname() . $extendingPeerClass . "
 ";
         }
         $script .= "
-        } catch (Exception \$e) {
+        } catch (\\Exception \$e) {
             throw new PropelException('Unable to get OM class.', \$e);
         }
 
@@ -1500,7 +1500,7 @@ abstract class " . $this->getClassname() . $extendingPeerClass . "
             \$con->beginTransaction();
             \$pk = " . $this->basePeerClassname . "::doInsert(\$criteria, \$con);
             \$con->commit();
-        } catch (Exception \$e) {
+        } catch (\\Exception \$e) {
             \$con->rollBack();
             throw \$e;
         }
@@ -1611,7 +1611,7 @@ abstract class " . $this->getClassname() . $extendingPeerClass . "
             \$con->commit();
 
             return \$affectedRows;
-        } catch (Exception \$e) {
+        } catch (\\Exception \$e) {
             \$con->rollBack();
             throw \$e;
         }
@@ -1773,7 +1773,7 @@ abstract class " . $this->getClassname() . $extendingPeerClass . "
             \$con->commit();
 
             return \$affectedRows;
-        } catch (Exception \$e) {
+        } catch (\\Exception \$e) {
             \$con->rollBack();
             throw \$e;
         }
@@ -2145,11 +2145,11 @@ abstract class " . $this->getClassname() . $extendingPeerClass . "
     /**
      * Returns the TableMap related to this peer.
      * This method is not needed for general use but a specific application could have a need.
-     * @return TableMap
+     * @return \TableMap
      * @throws PropelException Any exceptions caught during processing will be
      *		 rethrown wrapped into a PropelException.
      */
-    public static function getTableMap()
+    public static function getTableMap(): \TableMap
     {
         return Propel::getDatabaseMap(" . $this->getPeerClassname() . "::DATABASE_NAME)->getTable(" . $this->getPeerClassname() . "::TABLE_NAME);
     }
