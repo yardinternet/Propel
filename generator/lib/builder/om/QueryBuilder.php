@@ -97,6 +97,9 @@ class QueryBuilder extends OMBuilder
 /**";
         }
 
+        $script .= "
+* @template T";
+
         // magic orderBy() methods, for IDE completion
         foreach ($this->getTable()->getColumns() as $column) {
             $script .= "
@@ -820,7 +823,7 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . "
      * \$query->filterBy$colPhpName('%fooValue%'); // WHERE $colName LIKE '%fooValue%'
      * </code>
      *
-     * @param     ?string|array \$$variableName The value to use as filter.
+     * @param     string|array|null \$$variableName The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)";
         } elseif ($col->isBooleanType()) {
             $script .= "
