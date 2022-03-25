@@ -820,7 +820,7 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . "
      * \$query->filterBy$colPhpName('%fooValue%'); // WHERE $colName LIKE '%fooValue%'
      * </code>
      *
-     * @param     string \$$variableName The value to use as filter.
+     * @param     ?string|array \$$variableName The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)";
         } elseif ($col->isBooleanType()) {
             $script .= "
