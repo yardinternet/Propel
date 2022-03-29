@@ -231,14 +231,15 @@ public function getParentOrCreate(\$con = null)
     protected function addObjectGetSyncParent(&$script)
     {
         $parentTable = $this->getParentTable();
+        $parentClass = $this->builder->getNewStubObjectBuilder($parentTable)->getClassname();
         $pkeys = $parentTable->getPrimaryKey();
         $cptype = $pkeys[0]->getPhpType();
         $script .= "
 /**
  * Create or Update the parent " . $parentTable->getPhpName() . " object
- * And return its primary key
+ * and return it
  *
- * @return    " . $cptype . " The primary key of the parent object
+ * @return    " . $parentClass . " The primary key of the parent object
  */
 public function getSyncParent(\$con = null)
 {

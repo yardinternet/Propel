@@ -165,7 +165,7 @@ class " . $this->getClassname() . " extends TableMap
      * Relations are not initialized by this method since they are lazy loaded
      *
      * @return void
-     * @throws PropelException
+     * throws PropelException
      */
     public function initialize()
     {
