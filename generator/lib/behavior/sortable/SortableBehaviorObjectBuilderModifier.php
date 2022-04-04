@@ -246,7 +246,7 @@ public function getRank()
 /**
  * Wrap the setter for rank value
  *
- * @param     int
+ * @param     int \$v
  * @return    {$this->objectClassname}
  */
 public function setRank(\$v)
@@ -306,7 +306,7 @@ $script .= "
 /**
  * Wrap the setter for scope value
  *
- * @param     mixed A array or a native type
+ * @param     mixed \$v A array or a native type
  * @return    {$this->objectClassname}
  */
 public function setScopeValue(\$v)

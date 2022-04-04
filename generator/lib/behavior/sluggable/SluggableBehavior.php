@@ -148,7 +148,7 @@ if (\$this->isColumnModified($const) && \$this->{$this->getColumnGetter()}()) {
 /**
  * Wrap the setter for slug value
  *
- * @param   string
+ * @param   string \$v
  * @return  " . $this->getTable()->getPhpName() . "
  */
 public function setSlug(\$v)

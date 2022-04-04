@@ -4110,11 +4110,13 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
 
         $collName = $this->getRefFKCollVarName($refFK);
 
+        $param_type = $refFK->getTable()->getPhpName();
+
         $script .= "
     /**
-     * @param	{$relatedObjectClassName} \${$lowerRelatedObjectClassName} The $lowerRelatedObjectClassName object to add.
+     * @param	{$param_type} \${$lowerRelatedObjectClassName} The {$param_type} object to add.
      */
-    protected function doAdd{$relatedObjectClassName}(\${$lowerRelatedObjectClassName})
+    protected function doAdd{$relatedObjectClassName}({$param_type} \${$lowerRelatedObjectClassName})
     {
         \$this->{$collName}[]= \${$lowerRelatedObjectClassName};
         \${$lowerRelatedObjectClassName}->set" . $this->getFKPhpNameAffix($refFK, $plural = false) . "(\$this);

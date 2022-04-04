@@ -194,7 +194,7 @@ public static function sortableApplyScopeCriteria(Criteria \$criteria, \$scope, 
  * @param      int \$scope		Scope to determine which suite to consider";
         }
         $script .= "
- * @param     PropelPDO optional connection
+ * @param ?PropelPDO \$con optional connection
  *
  * @return    integer highest position
  */

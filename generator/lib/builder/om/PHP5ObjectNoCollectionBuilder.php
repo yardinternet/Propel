@@ -70,7 +70,7 @@ class PHP5ObjectNoCollectionBuilder extends PHP5ObjectBuilder
      * the [$clo] column, since it is not populated by
      * the hydrate() method.
      *
-     * @param      \$con PropelPDO (optional) The PropelPDO connection to use.
+     * @param ?PropelPDO     \$con PropelPDO (optional) The PropelPDO connection to use.
      * @return void
      * @throws PropelException - any underlying error will be wrapped and re-thrown.
      */";
@@ -536,7 +536,7 @@ class PHP5ObjectNoCollectionBuilder extends PHP5ObjectBuilder
     /**
      * Get the associated $className object
      *
-     * @param      PropelPDO Optional Connection object.
+     * @param      ?PropelPDO \$con Optional Connection object.
      * @return                 $className The associated $className object.
      * @throws PropelException
      */
