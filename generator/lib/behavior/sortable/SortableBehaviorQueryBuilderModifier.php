@@ -326,7 +326,7 @@ public function getMaxRank(" . ($useScope ? "$methodSignature, " : "") . "Propel
 ";
         }
         $script .= "
- * @param     PropelPDO optional connection
+ * @param     PropelPDO \$con optional connection
  *
  * @return    integer highest position
  */

@@ -291,7 +291,7 @@ public static function reorder(array \$order, PropelPDO \$con = null)
         \$con->commit();
 
         return true;
-    } catch (Exception \$e) {
+    } catch (\\Throwable \$e) {
         \$con->rollback();
         throw \$e;
     }
