@@ -229,7 +229,7 @@ class PropelPDO extends PDO
      *
      * @return boolean
      */
-    public function beginTransaction()
+    public function beginTransaction(): bool
     {
         $return = true;
         if (!$this->nestedTransactionCount) {
@@ -252,7 +252,7 @@ class PropelPDO extends PDO
      *
      * @throws PropelException
      */
-    public function commit()
+    public function commit(): bool
     {
         $return = true;
         $opcount = $this->nestedTransactionCount;
@@ -281,7 +281,7 @@ class PropelPDO extends PDO
      *
      * @return boolean Whether operation was successful.
      */
-    public function rollBack()
+    public function rollBack(): bool
     {
         $return = true;
         $opcount = $this->nestedTransactionCount;
@@ -339,7 +339,7 @@ class PropelPDO extends PDO
      *
      * @return void
      */
-    public function setAttribute($attribute, $value)
+    public function setAttribute(int $attribute, mixed $value): bool
     {
         switch ($attribute) {
             case self::PROPEL_ATTR_CACHE_PREPARES:
@@ -349,8 +349,10 @@ class PropelPDO extends PDO
                 $this->connectionName = $value;
                 break;
             default:
-                parent::setAttribute($attribute, $value);
+                return parent::setAttribute($attribute, $value);
         }
+
+        return true;
     }
 
     /**
@@ -362,7 +364,7 @@ class PropelPDO extends PDO
      *
      * @return mixed
      */
-    public function getAttribute($attribute)
+    public function getAttribute($attribute): mixed
     {
         switch ($attribute) {
             case self::PROPEL_ATTR_CACHE_PREPARES:
@@ -389,7 +391,7 @@ class PropelPDO extends PDO
      *
      * @return PDOStatement
      */
-    public function prepare($sql, $driver_options = array())
+    public function prepare(string $sql, array $driver_options = array()): PDOStatement|false
     {
         if ($this->useDebug) {
             $debug = $this->getDebugSnapshot();
@@ -421,7 +423,7 @@ class PropelPDO extends PDO
      *
      * @return integer
      */
-    public function exec($sql)
+    public function exec(string $sql): int|false
     {
         if ($this->useDebug) {
             $debug = $this->getDebugSnapshot();
@@ -448,7 +450,7 @@ class PropelPDO extends PDO
      *
      * @return PDOStatement
      */
-    public function query($statement, $mode = PDO::ATTR_DEFAULT_FETCH_MODE, ...$fetch_mode_args)
+    public function query($statement, $mode = PDO::ATTR_DEFAULT_FETCH_MODE, ...$fetch_mode_args): PDOStatement|false
     {
         if ($this->useDebug) {
             $debug = $this->getDebugSnapshot();
