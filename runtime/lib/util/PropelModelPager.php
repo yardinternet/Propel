@@ -392,18 +392,12 @@ class PropelModelPager implements IteratorAggregate, Countable
         return $this->getResults()->isEven();
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return $this->getResults()->getIterator();
     }
 
-    /**
-     * Returns the total number of results.
-     *
-     * @see        Countable
-     * @return int
-     */
-    public function count()
+    public function count(): int
     {
         return $this->getNbResults();
     }

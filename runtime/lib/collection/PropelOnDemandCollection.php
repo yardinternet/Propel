@@ -49,7 +49,7 @@ class PropelOnDemandCollection extends PropelCollection
     /**
      * @return PropelOnDemandIterator
      */
-    public function getIterator()
+    public function getIterator(): \Iterator
     {
         return $this->iterator;
     }
@@ -58,24 +58,16 @@ class PropelOnDemandCollection extends PropelCollection
 
     /**
      * @throws PropelException
-     *
-     * @param integer $offset
-     *
-     * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $key): bool
     {
         throw new PropelException('The On Demand Collection does not allow access by offset');
     }
 
     /**
      * @throws PropelException
-     *
-     * @param integer $offset
-     *
-     * @return mixed
-     */
-    public function offsetGet($offset)
+    */
+    public function offsetGet(mixed $key): mixed
     {
         throw new PropelException('The On Demand Collection does not allow access by offset');
     }
@@ -86,7 +78,7 @@ class PropelOnDemandCollection extends PropelCollection
      * @param integer $offset
      * @param mixed   $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         throw new PropelException('The On Demand Collection is read only');
     }
@@ -96,7 +88,7 @@ class PropelOnDemandCollection extends PropelCollection
      *
      * @param integer $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw new PropelException('The On Demand Collection is read only');
     }
@@ -106,19 +98,19 @@ class PropelOnDemandCollection extends PropelCollection
     /**
      * @throws PropelException
      */
-    public function serialize()
+    public function serialize(): string
     {
         throw new PropelException('The On Demand Collection cannot be serialized');
     }
 
     /**
-     * @throws PropelException
-     *
      * @param string $data
      *
      * @return void
+     * @throws PropelException
+     *
      */
-    public function unserialize($data)
+    public function unserialize(string $data): void
     {
         throw new PropelException('The On Demand Collection cannot be serialized');
     }

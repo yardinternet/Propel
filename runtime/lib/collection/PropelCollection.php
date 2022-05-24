@@ -362,10 +362,7 @@ class PropelCollection extends ArrayObject implements Serializable
 
     // Serializable interface
 
-    /**
-     * @return string
-     */
-    public function serialize()
+    public function serialize(): string
     {
         $repr = array(
             'data'   => $this->getArrayCopy(),
@@ -375,12 +372,7 @@ class PropelCollection extends ArrayObject implements Serializable
         return serialize($repr);
     }
 
-    /**
-     * @param string $data
-     *
-     * @return void
-     */
-    public function unserialize($data)
+    public function unserialize(string $data): void
     {
         $repr = unserialize($data);
         $this->exchangeArray($repr['data']);
@@ -392,10 +384,8 @@ class PropelCollection extends ArrayObject implements Serializable
     /**
      * Overrides ArrayObject::getIterator() to save the iterator object
      * for internal use e.g. getNext(), isOdd(), etc.
-     *
-     * @return ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): \Iterator
     {
         $this->iterator = new ArrayIterator($this);
 
