@@ -1260,8 +1260,12 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
             $script .= "
      * @param PropelPDO \$con An optional PropelPDO connection to use for fetching this lazy-loaded column.";
         }
+        $type = $col->getPhpType();
+        if ($type === 'double') {
+            $type = 'float';
+        }
         $script .= "
-     * @return ?" . $col->getPhpType() . "
+     * @return ?" . $type . "
      */";
     }
 
@@ -1283,7 +1287,11 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
         if ($col->isLazyLoad()) {
             $script .= "PropelPDO \$con = null";
         }
-        $script .= sprintf("): ?%s\n    {",$col->getPhpType());
+        $type = $col->getPhpType();
+        if ($type === 'double') {
+            $type = 'float';
+        }
+        $script .= sprintf("): ?%s\n    {", $type);
     }
 
     /**
